@@ -1,0 +1,64 @@
+# requirements.txt — Frontend-only (Social Media Content Analyzer)
+# Save alongside index.html, styles.css, app.js to document expected tooling.
+
+# -------------------------
+# System / Environment
+# -------------------------
+# Node.js (for optional dev tooling / local dev server / bundlers)
+node >= 14.0.0
+npm >= 6.0.0
+# Optional: yarn
+
+# -------------------------
+# Dev / Local server tools (install via npm)
+# -------------------------
+# Recommended one-liners:
+#  npm install -D live-server           # simple dev server
+#  npm install -D vite                 # fast dev + bundler (recommended)
+#  npm install -D parcel               # zero-config bundler
+#  npm install -D http-server          # static file server for production preview
+
+live-server
+vite
+parcel
+http-server
+
+# Optional build / tooling
+sass               # if you want .scss support (npm: sass)
+postcss            # for PostCSS pipelines
+autoprefixer       # add vendor prefixes
+esbuild            # fast bundler/transformer
+eslint             # linting
+prettier           # formatting
+
+# -------------------------
+# CDN / Third-party libs used by the app (no npm required if using CDN)
+# -------------------------
+# PDF parsing
+pdfjs-dist@3.11.174
+
+# OCR
+tesseract.js@5.4.0
+
+# If you prefer local install instead of CDN, use:
+#  npm install pdfjs-dist@3.11.174 tesseract.js@5.4.0
+
+# -------------------------
+# Notes
+# -------------------------
+# - This is a frontend-only project: you don't need Python packages.
+# - To install dev tools, run e.g.:
+#     npm init -y
+#     npm install -D vite eslint prettier
+#
+# - To run a simple local server (no build):
+#     npx live-server
+#   or
+#     npx http-server ./ -c-1
+#
+# - To bundle / use ES modules with hot-reload, use Vite:
+#     npm install -D vite
+#     # add "dev": "vite" to package.json scripts, then `npm run dev`
+#
+# - If you want, I can convert this into a proper package.json with scripts
+#   (dev, build, lint, serve) and produce a small README with commands.
